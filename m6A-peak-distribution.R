@@ -1,3 +1,7 @@
+# Data: 2020.02.28
+# Author: Han Shaoqing
+# usage: analysis for m6A peaks distribution
+
 # Packages:
 # https://github.com/olarerin/metaPlotR
 # wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.chromFa.tar.gz
@@ -76,3 +80,4 @@ mod <- c(rep("nomal", length(m6a.metagene.coord)),
 df <- data.frame(metagene.cord, mod)
 
 ggplot(df) + geom_density(aes(x = metagene.cord, fill = mod), alpha=0.4) + xlim(0, 3) +theme_bw()+ geom_vline(xintercept = 1:2, col = "grey")
+
