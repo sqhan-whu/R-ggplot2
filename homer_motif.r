@@ -1,3 +1,29 @@
+##############################################################################
+# python tranform data coloum and row for homer motif file
+
+import numpy as np
+from sys import argv
+
+with open(argv[1]) as f:
+	n_list = []
+	t_list = []
+	for i in f:
+		if not i.strip().startswith(">"):
+			i = i.strip()
+			t = i.split('\t')
+			t_list.append(t)
+
+	B = np.array(t_list)
+	A = B.T
+#	name = ["A","C","G","T"]
+#	final = np.c_[name,A]
+	for i in A:
+		print(str(i).replace(']','').replace('[','').replace('\'','').replace(' ','\t'))
+f.close()
+
+##############################################################################
+# R motifStack plot motif 
+##############################################################################
 suppressPackageStartupMessages(library(motifStack))
 library(ggplot2)
 
