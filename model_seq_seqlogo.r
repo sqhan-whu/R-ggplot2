@@ -2,6 +2,9 @@
 ### date: 20200520 
 ### auther: Han Shaoqing
 
+BiocManager::install("motifStack")
+suppressPackageStartupMessages(library(motifStack))
+
 a1 <- read.table("ND1-1_genome.bam.count.txt", sep="\t")  #读取矩阵
 a2 <- read.table("ND1-2_genome.bam.count.txt", sep="\t")
 du <- read.table("du.txt", sep="\t")
