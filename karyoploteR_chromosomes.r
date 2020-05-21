@@ -1,7 +1,7 @@
 #figure1.r
 #library(karyoploteR)
 
-pdf(file="chr.pdf",width=10,height=20)
+pdf(file="chromosome.pdf",width=12,height=16)
 chrX <- read.table("chrX.txt",head=FALSE,sep='\t')
 chrY <- read.table("chrY.txt",head=FALSE,sep='\t')
 chr1 <- read.table("chr1.txt",head=FALSE,sep='\t')
@@ -31,43 +31,46 @@ chr22 <- read.table("chr22.txt",head=FALSE,sep='\t')
 y <- rnorm(30, mean=0.5, sd=0.25)
 plot.params <- getDefaultPlotParams(plot.type=1)
 
-plot.params$ideogramheight <- 50
+plot.params$ideogramheight <- 45
 plot.params$data1height <- 100
-
+plot.params$data1outmargin <- 10
+plot.params$data1inmargin <- 10
 
 kp <- plotKaryotype(genome="hg38",plot.params = plot.params)
-kpPoints(kp, chr="chrX", x=chrX$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chrY", x=chrY$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr1", x=chr1$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr2", x=chr2$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr3", x=chr3$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr4", x=chr4$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr5", x=chr5$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr6", x=chr6$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr7", x=chr7$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr8", x=chr8$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr9", x=chr9$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr10", x=chr10$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr11", x=chr11$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr12", x=chr12$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr13", x=chr13$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr14", x=chr14$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr15", x=chr15$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr16", x=chr16$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr17", x=chr17$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr18", x=chr18$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr19", x=chr19$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr20", x=chr20$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr21", x=chr21$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr22", x=chr22$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
+kpPoints(kp, chr="chrX", x=chrX$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chrY", x=chrY$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr1", x=chr1$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr2", x=chr2$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr3", x=chr3$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr4", x=chr4$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr5", x=chr5$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr6", x=chr6$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr7", x=chr7$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr8", x=chr8$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr9", x=chr9$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr10", x=chr10$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr11", x=chr11$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr12", x=chr12$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr13", x=chr13$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr14", x=chr14$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr15", x=chr15$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr16", x=chr16$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr17", x=chr17$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr18", x=chr18$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr19", x=chr19$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr20", x=chr20$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr21", x=chr21$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr22", x=chr22$V1, y=0.3*y,cex=0.25,col="#397AB8")
 
 
 dev.off()
 
-pdf(file="chr12-18.pdf",width=10,height=20)
-plot.params$ideogramheight <- 50
+pdf(file="chr12-18.pdf",width=10,height=4)
+plot.params$ideogramheight <- 45
 plot.params$data1height <- 100
+plot.params$data1outmargin <- 10
+plot.params$data1inmargin <- 10
 kp <- plotKaryotype(genome="hg38",chromosomes = c("chr12", "chr18"),plot.params = plot.params)
-kpPoints(kp, chr="chr12", x=chr12$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
-kpPoints(kp, chr="chr18", x=chr18$V1, y=0.3*y,cex=0.25,col="#6AA3C6")
+kpPoints(kp, chr="chr12", x=chr12$V1, y=0.3*y,cex=0.25,col="#397AB8")
+kpPoints(kp, chr="chr18", x=chr18$V1, y=0.3*y,cex=0.25,col="#397AB8")
 dev.off()
