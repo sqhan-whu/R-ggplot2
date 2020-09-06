@@ -64,7 +64,8 @@ pvals_adj = p.adjust(pvals, method = 'bonferroni')
 #Plot
 corr_plot = ggplot(corr_melted) +
   geom_tile(aes(x= gene2, y = variable, fill = value), color = 'white') +
-  scale_fill_gradient2(low = '#f7f7f7', high = '#9055A2', space = "Lab", guide = 'colourbar', limits = c(0,1)) +
+# scale_fill_gradient2(low = '#f7f7f7', high = '#9055A2', space = "Lab", guide = 'colourbar', limits = c(0,1)) +
+  scale_fill_gradient2(low = '#ca0020', mid = '#f7f7f7', midpoint = 0, high = '#0571b0', space = "Lab", guide = 'colourbar', limits = c(-1,1)) +
   theme_pub() +
   theme(
     axis.ticks.x = element_blank(),
