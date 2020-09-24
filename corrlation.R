@@ -11,7 +11,7 @@ library(ggplot2)
 library(reshape2)
 
 #Source scripts
-source('plot_theme.R')
+#source('plot_theme.R')
 
 counts_to_plot <-read.table("corr2.txt",head=T,sep='\t')
 
@@ -62,6 +62,26 @@ pvals = c(t.test(as.matrix(corr_tri %>% filter(id == 4) %>% select(val)), mu=0)$
 pvals_adj = p.adjust(pvals, method = 'bonferroni')
 
 #Plot
+
+theme_pub = function(base_size = 15, font = 'Helvetica') {
+  txt = element_text(size = base_size, colour = 'black', face = 'plain')
+  bold_txt = element_text(size = base_size, colour = 'black', face = 'bold')
+  
+  theme_classic(base_size = base_size, base_family = font)  +
+    theme(
+      legend.key = element_blank(),
+      strip.background = element_blank(),
+      text = txt,
+      plot.title = txt,
+      axis.title = bold_txt,
+      axis.text = txt,
+      legend.title = bold_txt,
+      legend.text = txt,
+      legend.position = 'bottom')
+}
+
+
+
 corr_plot = ggplot(corr_melted) +
   geom_tile(aes(x= gene2, y = variable, fill = value), color = 'white') +
 # scale_fill_gradient2(low = '#f7f7f7', high = '#9055A2', space = "Lab", guide = 'colourbar', limits = c(0,1)) +
