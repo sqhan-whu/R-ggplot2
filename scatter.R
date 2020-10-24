@@ -1,6 +1,6 @@
 
 library(ggplot2)
-
+library(gridExtra)
 
 
 data =  read.table("cpm_13_table2.txt",header=TRUE,sep='\t')
