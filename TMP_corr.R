@@ -50,9 +50,10 @@ a<-read.table("TPM.txt",head=T)
 c = a[,2:3]
 cor_pearson <- cor(c, method = 'pearson')
 
-p1 = ggplot(data=a,aes(x=SYQ1,y=SYQ3))+geom_point(color="#CC9999",alpha=0.5)+ scale_x_log10(breaks = trans_breaks("log10", function(x) 10^x),
+p1 = ggplot(data=a,aes(x=SYQ1,y=SYQ3))+geom_point(color="#CC9999",alpha=0.5)+ 
+scale_x_log10(limits=c(0.1,100000),breaks = trans_breaks("log10", function(x) 10^x),
               labels = trans_format("log10", math_format(10^.x))) +
-     scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
+scale_y_log10(limits=c(0.1,100000),breaks = trans_breaks("log10", function(x) 10^x),
               labels = trans_format("log10", math_format(10^.x))) +
      theme_bw()+ coord_cartesian(clip = "off")+
      annotation_logticks(sides = "lb", outside = TRUE,  short = unit(.5,"mm"),
@@ -70,9 +71,10 @@ a<-read.table("TPM.old.txt",head=T)
 c = a[,2:3]
 cor_pearson <- cor(c, method = 'pearson')
 
-p2 = ggplot(data=a,aes(x=mof,y=kit))+geom_point(color="#CC9999",alpha=0.5)+ scale_x_log10(breaks = trans_breaks("log10", function(x) 10^x),
+p2 = ggplot(data=a,aes(x=mof,y=kit))+geom_point(color="#CC9999",alpha=0.5)+
+ scale_x_log10(limits=c(0.1,100000),breaks = trans_breaks("log10", function(x) 10^x),
               labels = trans_format("log10", math_format(10^.x))) +
-     scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
+     scale_y_log10(limits=c(0.1,100000),breaks = trans_breaks("log10", function(x) 10^x),
               labels = trans_format("log10", math_format(10^.x))) +
      theme_bw()+ coord_cartesian(clip = "off")+
  annotation_logticks(sides = "lb", outside = TRUE,  short = unit(.5,"mm"),
@@ -88,6 +90,3 @@ pdf("figure_total_TPM.pdf",,width=12,height=5)
 grid.arrange(p2,p1,ncol=2,nrow=1)
 
 dev.off()
-
-
-
